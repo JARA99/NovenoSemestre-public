@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Packages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Spanish
+\usepackage[utf8]{inputenc} % Tildes
+\usepackage[spanish]{babel} % Language
+\usepackage{babelbib} % Bibliografia español
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Recomended
+\usepackage{fancyhdr, graphicx, wrapfig,lipsum}
+\usepackage{amssymb}
+\usepackage{amsmath, amsthm, amsfonts}
+\usepackage[table]{xcolor} % Color table
+\usepackage{enumerate} % Reduce space in enumerate
+\usepackage{longtable} % Table accross multiple pages
+\usepackage{txfonts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User
+\usepackage{hyperref}  % Use Hyperlinks
+\usepackage{anysize} % Change the margin
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{physics}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Package setup
+
+\setlength{\parindent}{0in}             % Paragraph first line space
+\marginsize{2cm}{2cm}{2.5cm}{4cm}     % Margin
+\decimalpoint                           % Dot instead of comma
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\myTitle}{Atención en una clase virtual de física}
+\newcommand{\myDate}{Guatemala, 12 de febrero de 2022}
+\newcommand{\myCourse}{Didáctica de la Física}
+
+
+%\newcommand{\R}{\mathbb{R}}
+%\newcommand{\F}{\mathbf{F}}
+%\newcommand{\vi}{\mathbf{\hat{i}}}
+%\newcommand{\vj}{\mathbf{\hat{j}}}
+%\newcommand{\vk}{\mathbf{\hat{k}}}
+%\newcommand{\op}{\sigma\sqrt{2\pi}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tema - BEGIN
+\newtheoremstyle{Tema}% name of the style to be used
+  {5mm}% measure of space to leave above the theorem. E.g.: 3pt
+  {10mm}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {\newline}% punctuation between head and body
+  {30mm}% space after theorem head
+  {}% Manually specify head
+
+\theoremstyle{Tema} \newtheorem{Tema}{Tema} %%%%% Template para Temas
+\theoremstyle{Tema} \newtheorem{Serie}{Serie}              %%%%%  Template para Series de ejercicios
+\theoremstyle{Tema} \newtheorem{Ejercicio}{Ejercicio}    %%%%%  Template para Ejercicios
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Tema - END
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado - BEGIN %%%%%%%%%%
+\fancypagestyle{firststyle}
+{
+\renewcommand{\headrulewidth}{1.5pt}
+\fancyhead[R]{
+			\textbf{Universidad de San Carlos de Guatemala} \\
+			\textbf{Escuela de Ciencias Físicas y Matemáticas}\\
+			\textbf{\myCourse }  \\  %%%%%%%%%% Agregar nombre del curso 
+			\textbf{\myDate}   %%%%%%%%%%%%%%%%%%%%%% Agregar fecha en formato: Enero 15, 2015
+			}
+\fancyhead[L]{ 
+	\includegraphics[height=1.6 cm]{/home/jorgealejandro/Templates/ECFM.png} \\
+	\textbf{Jorge Alejandro Rodríguez Aldana}\\
+	\textbf{201804766} 
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado - END %%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado (pagina 2 en adelante) - BEGIN %%%
+\fancypagestyle{allStyle}
+{
+\renewcommand{\headrulewidth}{1pt}
+\fancyhead[R]{
+			\emph{\myTitle $-$ \myCourse} %%%% Modificar número de examen parcial y nombre del curso
+			}
+\fancyhead[L]{}  
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Encabezado (pagina 2 en adelante) - END %%%
+
+\date{}
+\setlength{\headheight}{0.8in} % fixes \headheight warning
+
+%%%%%%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%
+\begin{document}
+
+\pagestyle{allStyle}
+
+\thispagestyle{firststyle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Titulo - BEGIN
+\begin{center}
+\LARGE
+\textsc{\myTitle} % Modificar el Número del examen parcial
+\medskip
+\hrule height 1.5pt
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Instrucciones - BEGIN
+\vspace{0.1 in}
+
+\input{Content.tex}
+
+\bibliographystyle{ieeetr}% otras opciones {plain}
+\bibliography{ref}
+
+\end{document} %%%%%%%%%%%%%%%%%%%%%%%% BEGIN%%%%%%%%%%%%%%
