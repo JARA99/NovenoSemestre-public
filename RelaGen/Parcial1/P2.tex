@@ -1,0 +1,222 @@
+\section{Problema 2}
+\subsection{}
+
+Sea $s$ la trayectoria con parámetros de curva $\lambda$ y $\alpha$ tenemos que:
+
+\begin{align*}
+    s^{\mu}&=\left(t(\lambda,\alpha),x(\lambda,\alpha)\right)\\
+    &= \left(\alpha\sinh\lambda,\alpha\cosh\lambda\right)
+\end{align*}
+
+Podemos hallar las líneas tangentes a esta curva derivando parcialmente respecto al parámetro, por tanto:
+
+\textbf{Cuando $\mathbf{\alpha}$ es constante:}
+
+\begin{align*}
+    \pdv{s^\mu}{\lambda}&=\dv{s^\mu}{\lambda}\\
+    &= \left(\alpha \cosh\lambda,\alpha\sinh\lambda\right)\\
+    &= \chi^\mu
+\end{align*}
+
+\textbf{Cuando $\mathbf{\lambda}$ es constante:}
+
+\begin{align*}
+    \pdv{s^\mu}{\alpha}&=\dv{s^\mu}{\alpha}\\
+    &=\left(\sinh\lambda,\cosh\lambda\right)\\
+    &=\psi^\mu
+\end{align*}
+
+Ahora, para saber si estas líneas son ortogonales entre sí debemos calcular su producto punto:
+
+\begin{align*}
+    \chi^\mu\psi_\mu=\chi_\mu\psi^\mu&=\eta_{\mu\nu}\chi^\mu\psi^\nu\\
+    &=\alpha\cosh\lambda\sinh\lambda-\alpha\sinh\lambda\cosh\lambda\\
+    &=0
+\end{align*}
+\qed
+
+\subsection{}
+
+Calculemos $v$:
+\begin{align*}
+    v = \dv{x}{t}=\frac{\alpha\sinh\lambda}{\alpha\cosh\lambda}=\tanh\lambda
+\end{align*}
+
+Calculemos $\gamma$:
+\begin{align*}
+    \gamma = \frac{1}{\sqrt{1-v^2}} = \frac{1}{\sqrt{1-\tanh^2\lambda}} = \cosh\lambda
+\end{align*}
+
+Entonces:
+
+\begin{align*}
+    \dd \tau = \frac{\dd t}{\gamma} = \frac{\dd t}{\cosh\lambda}
+\end{align*}
+
+Y por la conservación de $\dd s^2$ tenemos:
+\begin{align*}
+    \dd s^2=\dd \tau^2 &= \dd t^2 - \dd x^2\\
+    \dd \tau &= \dd t \left(1-\frac{\dd x^2}{\dd t^2}\right)^{\frac{1}{2}}\\
+    \dd \tau &= \dd t \left(1-\cancelto{\tanh^2\lambda}{\left(\frac{\dd x}{\dd t}\right)^2}\right)^{\frac{1}{2}}\\
+    \dd \tau &= \dd t \left[1-\tanh^2\lambda\right]^{\frac{1}{2}}\\
+    \dd \tau &= \frac{\dd t}{\cosh\lambda}
+\end{align*}
+
+
+
+\subsection{}
+
+Dados $\chi^\mu$ y $\psi^\mu$ del inciso 1, ahora podemos hallar los vectores normales $\hat{e}_\alpha$ y $\hat{e}_\lambda$ normalizando los hallados anteriormente.
+
+\textbf{Con $\mathbf{\alpha}$ constante:}
+
+\begin{align*}
+    \hat{e}_\alpha &= \frac{1}{\sqrt{\chi^\mu\chi_\mu}}\chi^\mu\\
+    &= \frac{1}{\sqrt{\eta_{\mu\nu}\chi^\mu\chi^\nu}}\chi^\mu\\\\
+    \eta_{\mu\nu}\chi^\mu\chi^\nu &= \alpha^2(\cosh^2\lambda-\sinh^2\lambda)\\
+    &=\alpha^2\\\\
+    \hat{e}_\alpha^\mu = \frac{\chi^\mu}{\alpha}
+\end{align*}
+
+\textbf{Con $\mathbf{\lambda}$ constante:}
+
+\begin{align*}
+    \hat{e}_\lambda &= \frac{1}{\sqrt{\eta_{\mu\nu}\psi^{\mu}\psi^{\nu}}}\psi^\mu\\\\
+    \eta_{\mu\nu}\psi^{\mu}\psi^{\nu}&=\sinh^2\lambda - \cosh^2\lambda\\
+    &=-1\\\\
+    \hat{e}_\lambda^\mu &= -i\psi^\mu
+\end{align*}
+
+
+Ahora hallemos en términos de los vectores base $\hat{e}_t=(1,0)$ y $\hat{e}_x=(0,-1)$ la nueva base:
+
+\begin{align*}
+    \begin{cases}
+        \hat{e}_\alpha^\mu = \cosh\lambda\hat{e}_t^\mu-\sinh\lambda\hat{e}_x^\mu\\
+        \hat{e}_\lambda^\mu = i\sinh\lambda\hat{e}_t^\mu-i\cosh\lambda\hat{e}_x^\mu
+    \end{cases}
+\end{align*}
+
+Es decir:
+
+\begin{align*}
+    \begin{pmatrix}
+        \hat{e}_\alpha^\mu \\ \hat{e}_\lambda^\mu
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        \cosh\lambda & \sinh\lambda\\
+        i\sinh\lambda & i\cosh\lambda
+    \end{pmatrix}
+    \begin{pmatrix}
+        \hat{e}_t^\mu\\\hat{e}_x^\mu
+    \end{pmatrix}
+\end{align*}
+
+La matriz de transformación es:
+
+\begin{align*}
+    T = 
+    \begin{pmatrix}
+        \cosh\lambda & -\sinh\lambda\\
+        i\sinh\lambda & -i\cosh\lambda
+    \end{pmatrix}
+\end{align*}
+
+
+Y 
+
+\begin{align*}
+    T^{T} = 
+    \begin{pmatrix}
+        \cosh\lambda & i\sinh\lambda\\
+        -\sinh\lambda & -i\cosh\lambda
+    \end{pmatrix}
+\end{align*}
+
+
+Finalmente:
+
+\begin{align*}
+    TT^{T} =
+    \begin{pmatrix}
+        1   &  2i\sinh\lambda\cosh\lambda \\
+        2i\sinh\lambda\cosh\lambda    & 1
+    \end{pmatrix} =
+    \begin{pmatrix}
+        1   &  i\sinh2\lambda \\
+        i\sinh2\lambda    & 1
+    \end{pmatrix}
+\end{align*}
+
+No es ortogonal.
+
+\subsection{}
+Podemos hallar las geodésicas a partir de:
+
+\begin{align*}
+    \dd \tau^2 &= -\eta_{\alpha\beta}\dd x^\alpha\dd x^\beta\\
+    &=\frac{\dd t^2}{\cosh^2\lambda}
+\end{align*}
+
+Tambien buscamos hallar:
+
+\begin{align*}
+    {\frac  {d^{2}x^{\mu}}{d\tau^{2}}}+\Gamma _{{\gamma\alpha}}^{{\mu}}{\frac  {dx^{\gamma}}{d\tau}}{\frac  {dx^{\alpha}}{d\tau}}=0
+\end{align*}
+
+Para esto haremos uso de las definiciones de cuadriaceleración y cuadrivelocidad, estos vectores son calculados en el siguiente inciso así que aquí únicamente las dejaré enunciadas:
+
+\begin{align*}
+    \alpha^\mu(\tau)+\Gamma_{\gamma\alpha}^\mu U^\gamma U^\alpha = 0
+\end{align*}
+
+\subsection{}
+
+Tenemos el cuadrivector posición (que en este caso es bidimencional):
+\begin{align*}
+    x^\mu&=(ct,x,0,0)
+    &=(c\alpha\sinh\lambda,\alpha\cosh\lambda,0,0)
+\end{align*}
+
+Ahora hallemos lo solicitado
+
+\textbf{Cuadrivelocidad}
+
+\begin{align*}
+    U^\mu(\tau)&=\dv{x^\mu(\tau)}{\tau}\\
+    &=\cosh\lambda\dv{x^\mu}{t}\\
+    &=\cosh\lambda(1,v,0,0)\\
+    &=\cosh\lambda(1,\tanh\lambda,0,0)
+\end{align*}
+
+\textbf{Cuadriaceleración}
+
+\begin{align*}
+    \alpha^\mu(\tau)&=\dv{U^\mu(\tau)}{\tau}\\
+    % &=\cosh\lambda\dv{U^\mu}{t}\\
+    &=\cosh\lambda\left(0,\dv{\tanh\frac{\tau}{\alpha}}{\tau},0,0\right)\\
+    &=\cosh\lambda\left(0,\frac{1}{\alpha\cosh^2\frac{\lambda}{\alpha}},0,0\right)
+\end{align*}
+
+Además, vemos que $t$ y $x$ cumplen con la ecuación de una hiperbola:
+
+\begin{align*}
+    \frac{x^2}{\alpha^2}-\frac{t^2}{\alpha^2}=1
+\end{align*}
+
+Esto es fácil de demostrar, sustituyendo las definiciones de $x$ y $t$:
+
+\begin{align*}
+    \frac{x^2}{\alpha^2}-\frac{t^2}{\alpha^2}
+        &=\frac{\alpha^2\cosh^2\lambda}{\alpha^2}-\frac{\alpha^2\sinh^2\lambda}{\alpha^2}\\
+        &=\cosh^2\lambda-\sinh^2\lambda\\
+        &=1
+\end{align*}
+\qed
+
+
+\subsection{}
+
+El la trayectoria descrita por el observador \textbf{O} sea una hiperbola se puede utilizar para hacer una relación al movimiento de partículas en el espacio sometidas a campos gravitacionales. Pero el que la matriz de transformación entre este sistema y los vectores de la base no sea ortogonal supondría dificultades de cálculo.
+
+Cuando se tenga el caso específico en el que la trayectoria descrita coincida con el sistema, puede ser factible usar estos nuevos vectores base.

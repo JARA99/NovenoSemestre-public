@@ -1,0 +1,104 @@
+\section{Problema 3}
+\subsection{}
+
+Tenemos:
+
+\begin{align*}
+    S(x^\mu)=\int \dd \sigma\left(-mc\sqrt{\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}-\frac{e}{c}A_\mu(x)\dot{x}^\mu\right)
+\end{align*}
+
+Reparametrizando la curva a un parámetro $\omega$, y hallando una relación entre los parámetros $\sigma=\sigma(\omega)$ tenemos que usando la regla de la cadena:
+
+\begin{align*}
+    \dd\sigma=\dv{\sigma}{\omega}\dd\omega
+\end{align*}
+
+Y haciendo la regla de la cadena en la expresión de $S$ tenemos:
+
+\begin{align*}
+    S(x^\mu)
+    &=\int\dv{\sigma}{\omega} \dd \omega\left(-mc\sqrt{\eta_{\mu\nu}\dv{x^\mu}{\omega}\dv{x^\nu}{\omega}\left(\dv{\omega}{\sigma}\right)^2}-\frac{e}{c}A_\mu(x)\dv{x^\mu}{\omega}\dv{\omega}{\sigma}\right)\\
+    &=\int\dv{\sigma}{\omega} \dd \omega\left(-mc\sqrt{\eta_{\mu\nu}\dv{x^\mu}{\omega}\dv{x^\nu}{\omega}}\left(\dv{\omega}{\sigma}\right)-\frac{e}{c}A_\mu(x)\dv{x^\mu}{\omega}\dv{\omega}{\sigma}\right)\\
+    &=\int\dv{\sigma}{\omega}\dv{\omega}{\sigma} \dd \omega\left(-mc\sqrt{\eta_{\mu\nu}\dv{x^\mu}{\omega}\dv{x^\nu}{\omega}}-\frac{e}{c}A_\mu(x)\dv{x^\mu}{\omega}\right)\\    
+    &=\int\dd \omega\left(-mc\sqrt{\eta_{\mu\nu}\dv{x^\mu}{\omega}\dv{x^\nu}{\omega}}-\frac{e}{c}A_\mu(x)\dv{x^\mu}{\omega}\right)\\    
+\end{align*}
+
+\qed
+
+\subsection{}
+
+Sabemos que la siguiente acción:
+
+\begin{align*}
+    S(x^\mu)=\int L\dd \sigma
+\end{align*}
+
+Se minimiza haciendo pequeñas variaciones, y dejando como resultado las ecuaciones de Euler-Lagrange:
+
+\begin{align*}
+    \dv{\sigma}\pdv{L}{\dot{x}^\alpha}-\pdv{L}{x^\alpha}=0\tag{1}\label{eq:eula}
+\end{align*}
+
+Ahora, en nuestro caso:
+
+\begin{align*}
+    L = -mc\sqrt{\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}-\frac{e}{c}A_\mu(x)\dot{x}^\mu
+\end{align*}
+
+Calculamos:
+
+\begin{align*}
+    \pdv{L}{\dot{x}^\alpha}
+    &=-\frac{mc}{2\cancelto{c}{\sqrt{\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}}}\left[2\eta_{\mu\nu}\dot{x}^\mu\pdv{\dot{x}^\nu}{\dot{x}^\alpha}\right]-\frac{e}{c}A_\mu\pdv{\dot{x}^\mu}{\dot{x}^\alpha}\\
+    &=-m\eta_{\mu\nu}\dot{x}^\mu\delta^\nu_\alpha-\frac{e}{c}A_\mu\delta^\mu_\alpha\\
+    &=-m\dot{x}_\alpha-\frac{e}{c}A_\alpha\\
+    \dv{\sigma}\pdv{L}{\dot{x}^\alpha}
+    &=-m\ddot{x}_\alpha-\frac{e}{c}\pdv{A_\alpha}{x^\mu}\dv{x^\mu}{\sigma}\\
+    &=-m\ddot{x}_\alpha - \frac{e}{c}\partial_\mu A_\alpha \dot{x}^\mu
+\end{align*}
+
+Y:
+
+
+\begin{align*}
+    \pdv{L}{x^\alpha}
+    &=-\frac{e}{c}\partial_\alpha A_\mu \dot{x}^\mu
+\end{align*}
+
+Sustituyendo en (\ref{eq:eula}):
+
+\begin{align*}
+    0&=\dv{\sigma}\pdv{L}{\dot{x}^\alpha}-\pdv{L}{x^\alpha}\\
+    &= -m\ddot{x}_\alpha - \frac{e}{c}\partial_\mu A_\alpha \dot{x}^\mu+\frac{e}{c}\partial_\alpha A_\mu \dot{x}^\mu\\
+    m\ddot{x}_\alpha &= \frac{e}{c}\dot{x}^\mu\left(\partial_\alpha A_\mu - \partial_\mu A_\alpha\right)\\
+\end{align*}
+
+Y ahora podemos calcular con el tensor electromagnético $F_{\alpha\mu}=\partial_\alpha A_\mu - \partial_\mu A_\alpha$ \cite{Electrom}.
+
+\begin{align*}
+    m\ddot{x}_\alpha &= \frac{e}{c}\dot{x}^\mu F_{\alpha\mu}\\
+\end{align*}
+
+Y por tanto:
+
+\begin{align*}
+    \ddot{x}_\alpha &= \frac{e}{mc}F_{\alpha\mu}\dot{x}^\mu \\
+\end{align*}
+
+\textbf{Comentario:}
+Es interesante como el tensor electromagnético aparece de forma natural en la solución a la ecuación de movimiento, ya que este tensor está directamente relacionado con los campos eléctrico y magnético:
+
+\begin{align*}
+    F_{\mu \nu }={\begin{bmatrix}0&E_{x}/c&E_{y}/c&E_{z}/c\\-E_{x}/c&0&-B_{z}&B_{y}\\-E_{y}/c&B_{z}&0&-B_{x}\\-E_{z}/c&-B_{y}&B_{x}&0\end{bmatrix}}
+\end{align*}
+
+Vemos que al hallar las componentes espaciales de $m\ddot{x}_i$ de la fuerza y tomar $c=1$ tendremos la formulación clásica de fuerza de Lorentz para un electrón en movimiento:
+
+\begin{align*}
+    m\ddot{x}_1 = - eE_x+0-eB_zv_y+eB_yv_z\\
+    m\ddot{x}_2 = - eE_y+eB_zv_x+0-eB_xv_z\\
+    m\ddot{x}_3 = - eE_z-eB_yv_x+eB_xv_y+0\\\\
+    \Rightarrow
+    m\ddot{x} = -e\vec{E}-e\left(\vec{v}\times\vec{B}\right)
+\end{align*}
+

@@ -1,0 +1,416 @@
+\section{Problema 1}
+
+% \subsection{Problema 1.1}
+\begin{frame}
+    \frametitle{Problema 1.1. - Enunciado}
+
+    \textbf{Enunciado:} Utilizando la ecuación de continuidad, la primera ecuación de Friedmann y la ecuación de estado, encontrar la dependencia temporal del factor de escala $a(t)$, estudiar la solución $a(t)$ correspondiente a $w=0$, $w=1/3$ y $w=-1/3$ en el caso $k=0$. Explicar qué tipo de universo corresponde a cada caso.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.1. - Solución}
+
+    Cada valor de $w$ correspone a:
+
+    \begin{table}
+        \centering
+        \begin{tabular}{rl}
+            $w=0$ & Universo dominado por materia.\\
+            $w=1/3$ & Universo dominado por radiación.\\
+            $w=-1/3$ & Universo dominado por curvatura.\\
+            $w=-1$ & Universo dominado por vacío.
+        \end{tabular}
+    \end{table}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.1. - Solución}
+
+    Partiendo de las siguientes ecuaciones:
+
+    \begin{align}
+        \dot{\rho} &= -3H\left(\rho+P\right)\\
+        H & = \frac{\dot{a}}{a}\\
+        P&=w\rho\label{eq:P}
+    \end{align}
+
+    Llegamos a:
+
+    \begin{equation}
+        \rho = \rho_0\left(\frac{a_0}{a}\right)^{3\left(1+w\right)} 
+        \label{eq:rho(a)}
+    \end{equation}
+
+    Con $t_0$ el tiempo presente y $\rho(t_0)=\rho_0$ y $a(t_0)=a_0$.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.1. - Solución}
+
+    De la ecuación (\ref{eq:rho(a)}) podemos hacer algunos análisis para los distintos valores de $w$.
+
+    Vemos que en $w=0$ la expansión del universo causa que la densidad de materia decrezca con un factor de $1/a^3$. En cambio, en un universo dominado por curvatura ($w=-1/3$) el factor decrece a $1/a^2$.
+
+    Pero en el caso de un universo dominado por radiación ($w=1/3$) el factor es un exponente mayor, es decir $1/a^4$, esto es causado porque la densidad de radiación no solo decrece en la expansión, sino que la radiación sufre de corrimiento al rojo.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.1. - Solución}
+
+    Ahora partiendo de (\ref{eq:rho(a)}), $k=0$ y de:
+
+    \begin{equation}
+        H^2=\left(\frac{\dot{a}}{a}\right)^2=\frac{8\pi G}{3c^2}\rho-\frac{kc^2}{a^2}\label{eq:H2}
+    \end{equation}
+
+    Resolvemos la ecuación diferencial para $a(t)$:
+
+    \begin{equation}
+        a(t) = a_0\left[\frac{3\left(1+w\right)}{2}\left(\frac{8\pi G \rho_0}{3c^2}\right)^{1/2}\left(t-t_0\right)+1\right]^{\frac{2}{3\left(1+w\right)}}
+        \label{eq:a(t)}
+    \end{equation}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.2. - Enunciado}
+
+    Encontrar la relación entre la solución de $H(t_0)=H_0$ y la edad del universo $\Delta t$ de acuerdo con los distintos valores de $w$.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.2. - Solución}
+
+    De la ecuación (\ref{eq:H2}) tenemos que $H(t_0)^2=H_0^2$ está dada por:
+
+    \begin{equation*}
+        H_0^2=\frac{8 \pi G}{3c^2}\rho_0-\frac{kc^2}{a_0^2}
+    \end{equation*}
+
+    Que cuando $k=0$:
+
+    \begin{equation}
+        H_0=\left(\frac{8 \pi G}{3c^2}\rho_0\right)^{1/2}\label{eq:H_0}
+    \end{equation}
+
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.2. - Solución}
+
+    Ahora, sabemos que la edad del universo $\Delta t$ está dada por la diferencia de tiempo entre el Big Bang y la actualidad: $\Delta t = t_0-t_{BB}$.
+
+    Usando \ref{eq:a(t)} tenemos:
+
+    \begin{align*}
+        a(t_{BB}) &= a_0\left[\frac{3\left(1+w\right)}{2}\left(\frac{8\pi G \rho_0}{3c^2}\right)^{1/2}\left(t_{BB}-t_0\right)+1\right]^{\frac{2}{3\left(1+w\right)}}\\
+        &=a_0\left[\frac{3\left(1+w\right)}{2}H_0\left(-\Delta t\right)+1\right]^{\frac{2}{3\left(1+w\right)}}
+    \end{align*}
+
+    Además: $a(t_{BB}) = 0$, de esto:
+
+    \begin{equation}
+        \Delta t = \frac{2H_0^{-1}}{3(1+w)}
+        \label{eq:Deltat}
+    \end{equation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.2. - Solución}
+
+    Entonces para los distintos valores de $w$ tenemos:
+
+    \begin{table}
+        \centering
+        \begin{tabular}{rl}
+            $w$ & $\Delta t$\\\hline
+            $0$ & $\frac{2}{3}H_0^{-1}$\\
+            $1/3$ & $\frac{1}{2}H_0^{-1}$\\
+            $-1/3$ & $H_0^{-1}$\\
+        \end{tabular}
+    \end{table}
+    
+    De esto podemos concluir que la edad del universo es distinta en cada tipo de universo. Y si el universo ha estado en distintos tiempos en distintas de estas faces, la edad del universo es una combinación lineal de estas soluciones.
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.3. - Enunciado}
+
+    Las soluciones de los escenarios anteriores incluyen un Big Bang, donde $a(t_{BB})=0$. ¿Es esto una característica genérica de las ecuaciones de Friedmann con materia y curvatura arbitraria? Obtenga una cota para $t_{BB}$.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.3. - Solución}
+
+    Para hallar la cota necesitaremos establecer una condición: \textit{La condición fuerte de energía:} $\rho+3P\geq0$
+
+    Podemos reescribir:
+
+    \begin{equation}
+        P\geq -\frac{1}{3}\rho
+        \label{eq:cond}
+    \end{equation}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.3. - Solución}
+
+    Ahora de (\ref{eq:P}) y (\ref{eq:cond}) tenemos:
+
+    \begin{align*}
+        w\rho = P &\geq -\frac{1}{3}\rho\\
+        % \Rightarrow~~~~~
+        w &\geq -\frac{1}{3}\\
+        % \Rightarrow~~~~~
+        1+w &\geq 1-\frac{1}{3}\\
+        \frac{1}{1+w} &\leq \frac{1}{1-\frac{1}{3}}
+    \end{align*}
+
+    De esto y (\ref{eq:Deltat}) tenemos:
+
+    \begin{align*}
+        \Delta t = t_0-t_{BB} &=\frac{2 H_0^{-1}}{3(1+w)}\leq\frac{2H_0^{-1}}{3(1-\frac{1}{3})}\\
+    \end{align*}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.3. - Solución}
+
+    Resolviendo para $t_{BB}$ tenemos:
+
+    \begin{equation}
+        t_{BB}\geq t_0-H_0^{-1}\label{eq:tbb-cot}
+    \end{equation}
+
+    De esto podemos concluir que el Big Bang es una característica de las ecuaciones de Friedmann solo si se cumple la condición fuerte de energía.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.4. - Enunciado}
+
+    Estudiar los escenarios del factor de escala $FRW$ para un universo dominado por materia con curvatura ($k=0$, $k=-1$, $k=1$).
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.4. - Solución}
+
+    Este problema se reduce a estudiar las soluciones a la ecuación diferencial (\ref{eq:H2}), pero esta vez considerando $k$ no necesariamente igual a cero y $w=0$:
+
+    \begin{align*}
+        H^2=\left(\frac{\dot{a}}{a}\right)^2=\frac{8\pi G}{3c^2}\rho_0\left(\frac{a_0}{a}\right)^{3}-\frac{kc^2}{a^2}
+    \end{align*}
+
+    Sin embargo, encontrar una solución algebraica de esta ecuación diferencial es difícil incluso para una calculadora\footnote{Probado con \url{https://www.calculadora-de-integrales.com/}}.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.4. - Solución}
+
+    Por esto, solo estudiaremos los posibles escenarios, reescribiendo la expresión:
+
+    \begin{equation*}
+        \dot{a}^2=\frac{8\pi G}{3c^2}\rho_0~a_0^3~a^{-1}-kc^2
+    \end{equation*}
+
+    Vemos que la variación del factor de escala decrece conforme su valor se aumenta, por lo que si hacemos tender $a$ a infinito, el valor de $\dot{a}$ se vuelve constante:
+
+    \begin{equation*}
+        \lim_{a\rightarrow\infty} \dot{a}^2 = -kc^2
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 1.4. - Solución}
+
+    Aquí vemos que para $k=0$, $a$ deja de variar ($\dot{a}=0$) en $a\rightarrow \infty$. Sin embargo, vemos que para valores $k$ negativos, como lo es $k=-1$, $a$ crecerá indefinidamente.
+
+    El último caso, $k$ positivo, específicamente $k=1$ resulta en una variación de $a$ imaginaria $\dot{a}=ic$, lo cual es físicamente imposible, por lo que podemos determinar que el valor de $a$ está acotado. Podemos determinar la cota de la siguiente manera:
+
+    \begin{align*}
+        \frac{8\pi G}{3c^2}\rho_0~a_0^3~a^{-1}-kc^2&\geq 0\\
+        a&\leq \frac{8\pi G}{3kc^4}\rho_0~a_0^3
+    \end{align*}
+
+\end{frame}
+
+\section{Problema 2}
+
+\begin{frame}
+    \frametitle{Problema 2.1. - Enunciado}
+
+    Demuestre que en presencia de una constante cosmológica y otra materia, la ecuación de Friedmann se convierte en:
+
+    \begin{equation}
+        H^2=\frac{8\pi G}{3c^2}\rho + \frac{\Lambda}{3} - \frac{kc^2}{a^2}
+        \label{eq:H2mood}
+    \end{equation}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.1. - Solución}
+
+    Necesitaremos partir algunas ecuaciones:
+
+    Recoremos la métrica:
+
+    \begin{align}
+        g_{tt}&=1\label{eq:gtt}\\
+        g_{rr}&=\frac{a^2}{1-kr}\\
+        g_{\theta\theta}&=a^2r^2\\
+        g_{\phi\phi}&=a^2r^2\sin^2\theta
+    \end{align}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.1. - Solución}
+
+    También el tensor de Ricci y el escalar de Ricci:
+
+    \begin{align}
+        R_{tt}&=-\frac{a\ddot{a}}{a}\\
+        R_{ii}&=-\frac{g_{ii}}{a^2}\left(a\ddot{a}+2\dot{a}^2+2k\right)
+    \end{align}
+
+    \begin{align}
+        R = -6\left[\frac{\ddot{a}}{a}+\left(\frac{\dot{a}}{a}\right)^2+\frac{k}{a^2}\right]
+    \end{align}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.1. - Solución}
+
+    El tensor de energía e impulso
+
+    \begin{align}
+        T_{tt}&=\rho\\
+        T_{ii}&=-Pg_{ii}
+    \end{align}
+
+    Y el valor de $\kappa$:
+
+    \begin{align}
+        \kappa = 8\pi G\label{eq:kappa}
+    \end{align}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.1. - Solución}
+
+    Finalmente la ecuación de Einstein:
+
+    \begin{align}
+        R_{\mu\nu}-\frac{1}{2}g_{\mu\nu}R-\Lambda g_{\mu\nu} = \kappa T_{\mu\nu}
+        \label{eq:Einst}
+    \end{align}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.1. - Solución}
+
+    Finalmente, sustituyendo las ecuaciones (\ref{eq:gtt})  a la (\ref{eq:kappa}) en (\ref{eq:Einst}) y tomando la componente $tt$ tenemos:
+
+    \begin{align*}
+        R_{tt}-\frac{1}{2}g_{tt}R-\Lambda g_{tt} &= \kappa T_{tt}\\
+        -3\frac{\ddot{a}}{a}+3\left(\frac{\ddot{a}}{a}+\left(\frac{\dot{a}}{a}\right)^2+\frac{k}{a^2}\right)-\Lambda &= 8\pi G\rho\\
+        \left(\frac{\dot{a}}{a}\right)^2 &= \frac{8\pi G\rho}{3} + \frac{\Lambda}{3} - \frac{k}{a^2}
+    \end{align*}
+
+    Con $c=1$.
+
+    \qed
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.2. - Enunciado}
+
+    Estudie y describa la geometría del espacio-tiempo para el caso $\Lambda > 0$ en un universo sin materia.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.2. - Solución}
+
+    Sabemos que en un caso sin materia $\rho = 0$. De nuevo el problema se reduce a encontrar las soluciones a la ecuación diferencial (\ref{eq:H2mood}) tomando $\rho=0$.
+
+    Esto es:
+
+    \begin{align*}
+       \dot{a}^2 = \frac{\Lambda}{3}a^2-k
+    \end{align*}
+
+    % \begin{align*}
+    %     \int_{a_0}^a \frac{\dd a}{\sqrt{\frac{\Lambda}{3}a^2-k}}= \int_{t_0}^t \dd t
+    %  \end{align*}
+
+    Esta si tiene una solución algebráica, pero es dificil obtener una expresión explicita para $a$ a partir de ella:
+
+    \begin{align*}
+        \frac{\ln\abs{\sqrt{\frac{\Lambda}{3}a^2-k}+\left(\frac{\Lambda}{3}\right)^{1/2}a}}{\left(\frac{\Lambda}{3}\right)^{1/2}} = t_0 - t
+    \end{align*}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.2. - Solución}
+
+    Aunque la solución explicita de $a$ es difícil de obtener, aún se pueden concluir algunas cosas, como que la dependencia temporal de $a$ es exponencial, y en el caso $k = 0$ tenemos:
+
+    \begin{equation*}
+        a = \left(\frac{3}{4\Lambda}\right)^{1/2}\exp\left[\left(\frac{\Lambda}{3}\right)^{1/2}\left(t_0-t\right)\right]
+    \end{equation*}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.3. - Enunciado}
+
+    Describa el caso de universo plano ($k=0$) dominado por materia, con constante cosmológica $\Lambda > 0$.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problema 2.3. - Solución}
+
+    De nuevo, esto se reduce a encontrar las soluciones a la ecuación diferencial (\ref{eq:H2mood}) tomando $k=0$ y $w=0$.
+
+    Esto es:
+
+    \begin{align*}
+        \dot{a}^2 = \frac{8\pi G}{3c^2}\rho_0 a_0^{3}a^{-1}+\frac{\Lambda}{3}a^2
+    \end{align*}
+
+    Cuya solución es:
+
+    \begin{align*}
+        \frac{2\ln\left[\left(H_0^2a_0^3a^3+\frac{\Lambda}{3}\right)^{1/2}+H_0a_0^{3/2}a^{3/2}\right]}{3H_0a_0^{3/2}}\Bigg\lvert_{a_0}^{a} = t - t_0
+    \end{align*}
+
+    Con $H_0$ dado por (\ref{eq:H_0}).
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Problema 2.3. - Solución}
+
+    De nuevo nos encontramos en una dificultad para despejar $a$. Sin embargo, es fácil darse cuenta que la solución de $a$ de nuevo será una exponencial respecto al tiempo. Pero esta vez el exponente tiene un factor de $3/2$ y el sistema depende de la constante de Hubble actual $H_0$.
+
+\end{frame}

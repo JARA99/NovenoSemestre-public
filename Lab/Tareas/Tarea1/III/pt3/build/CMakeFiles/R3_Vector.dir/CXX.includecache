@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/VecR3.hpp
+iostream
+-
+string
+-
+
+/home/jorgealejandro/Documents/Tareas/2022/NovenoSemestre-public/Lab/Tareas/Tarea1/III/pt3/class03.cpp
+cstdlib
+-
+iostream
+-
+VecR3.hpp
+/home/jorgealejandro/Documents/Tareas/2022/NovenoSemestre-public/Lab/Tareas/Tarea1/III/pt3/VecR3.hpp
+
+/home/jorgealejandro/Documents/Tareas/2022/NovenoSemestre-public/Lab/Tareas/Tarea1/III/pt3/src/VecR3.cpp
+iostream
+-
+cmath
+-
+VecR3.hpp
+/home/jorgealejandro/Documents/Tareas/2022/NovenoSemestre-public/Lab/Tareas/Tarea1/III/pt3/src/VecR3.hpp
+

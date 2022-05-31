@@ -1,0 +1,162 @@
+\section{Problema 1}
+
+\subsection{}
+
+Debido a que estamos considerando un rayo de luz, tenemos:
+
+\begin{align*}
+    \dd \vec{x} &= \vec{v} \dd t\\
+    \dd l   &= c \dd t\\
+    \dd l^2 &= c^2 \dd t^2\\
+    c^2 \dd t^2 - \dd l^2 &= 0\\
+    \dd s^2 &= 0 \tag{1}
+\end{align*}
+
+% Ahora podemos usar la expresión dada y trasladarla a coordenadas esféricas:
+
+% \begin{align}
+%     \dd s^2
+%         &= \left(1+\frac{2\phi}{c^2}\right)c^2\dd t^2 - \left(1-\frac{2\Phi}{c^2}\right)\left(\dd x^2+\dd y^2+ \dd z^2\right)\\
+%     0   &= 
+% \end{align}
+
+También es útil ver que, expandiendo en series al rededor de $\frac{2\Phi}{c^2}$ tenemos:
+
+\begin{align*}
+    \frac{1}{1-\frac{2\Phi}{c^2}}
+        &= 1 + \frac{2\Phi}{c^2}+\left(\frac{2\Phi}{c^2}\right)^2 + \cdots
+\end{align*}
+
+Ahora, considerando que $\frac{\Phi}{c^2}<<1$, podemos descartar los términos de orden superior a $1$.
+
+\begin{align*}
+    \Rightarrow \frac{1}{1-\frac{2\Phi}{c^2}} \approx 1+\frac{2\Phi}{c^2} \tag{2} \label{eq:exp}
+\end{align*}
+
+Ahora hallemos las expresiones de $\Delta t$ para el sistema con geometría lineal $\dd s^2 = c^2\dd t^2-\dd l^2$ y $\Delta t'$ para el sistema con la geometría planteada en el enunciado.
+
+\bigskip
+
+\textbf{Sistema lineal:}
+
+\begin{align*}
+    \dd s^2 
+        &= c^2 \dd t^2 - \dd l^2\\
+    0   &= c^2 \dd t^2 - \dd l^2\\
+    \dd t^2 &= \frac{1}{c^2}\dd l^2\\
+    \dd t &= \frac{1}{c}\dd l\\
+    \Delta t &= \frac{1}{c}\int \dd l
+\end{align*}
+
+\bigskip
+
+\textbf{Sistema planteado:}
+
+\begin{align*}
+    \dd s^2 &= \left(1+\frac{2\phi}{c^2}\right)c^2\dd t^2 - \left(1-\frac{2\Phi}{c^2}\right)\left(\dd x^2+\dd y^2+ \dd z^2\right)\\
+    0 &= \left(1+\frac{2\phi}{c^2}\right)c^2\dd t^2 - \left(1-\frac{2\Phi}{c^2}\right)\dd l^2\\
+    &&\text{Usando la expansión \ref{eq:exp}}\\
+    0 &= \left(1-\frac{2\phi}{c^2}\right)^{-1}c^2\dd t^2 - \left(1-\frac{2\Phi}{c^2}\right)\dd l^2\\
+    &&\text{Multiplicando por }1-\frac{2\Phi}{c^2}\\
+    0 &=c^2\dd t^2 - \left(1-\frac{2\Phi}{c^2}\right)^2\dd l^2\\
+    &&\text{Despejando }\dd t\\
+    \dd t &=\frac{1}{c} \left(1 - \frac{2\Phi}{c^2}\right)\dd l\\
+    \Delta t' &= \frac{1}{c}\int \dd l - \frac{2}{c^3}\int \Phi \dd l
+\end{align*}
+
+Entonces el retardo $\delta t = \Delta t' - \Delta t$ es:
+
+\begin{equation*}
+    \delta t = -\frac{2}{c^3}\int \Phi \dd l
+\end{equation*}
+
+Aunque aparentemente esto es un "adelanto" y no un retardo, el potencial $\Phi = -\frac{GM}{r}$ incluye un signo que hace de $\delta t$ positivo.
+
+\qed
+
+\subsection{}
+
+Ahora, para hallar $\delta t$ hace falta valuar esta expresión.
+
+Sabemos que:
+
+\begin{align*}
+    \delta t = \frac{2}{c^3}\int \Phi\dd l
+\end{align*}
+
+Pero también sabemos que $\dd l = c \dd t$, además, podemos parametrizar la curva por la que la luz va a desplazarse en términos de $t$, dejando así el parámetro $\sigma = t$.
+
+% Con los datos actuales no podemos describir esta curva en su totalidad, pero lo que sí sabemos es que jamás pasará por el origen (el sol), ya que la luz se curvará al rededor del sol y no lo atravesará.
+% Además, podemos definir que en $t=0$ la señal es enviada y por tanto $r(0)=r_T$. También podemos decir que la señal llegará a Venus en $t=t_f$, por lo que $r(t_f) = r_V$.
+
+% Finalmente:
+
+% \begin{align*}
+%     \delta t &= \frac{2GM}{c^3}\int \frac{1}{r(t)}c\dd t\\
+%     \delta t &= \frac{2GM}{c^2}\int f(t)\dd t\\
+% \end{align*}
+
+Con el procedimiento visto en clase, hallamos una expresión para $\Phi$ distinta de $\frac{1}{r}$ que depende directamente del parámetro $\sigma$.
+
+Esta fue hallada usando teoría de perturbaciones y es una aproximación de segundo orden que describe el potencial de una geodésica nula (el tipo de movimiento que esperaríamos de un fotón moviéndose en este escenario es que tome una geodésica nula).
+
+\begin{align}
+    \Phi &= \Phi_o+\Phi_1+\cdots\\
+    \Phi_0&=\frac{1}{\sigma}\sin\phi\\
+    \Phi_1&=A\cos\phi+B\sin\phi+\frac{1}{2\sigma}\left(3+\cos2\phi\right)
+    % \frac{1}{\sigma}\sin\phi+\frac{GM}{2\sigma^2c^2}\left(3+4\cos\phi+\cos2\phi\right)
+\end{align}
+
+Y hallamos $A$ y $B$ en base a la condición propuesta. En este caso proponemos la condición de que cuando $U_1\rightarrow0$ entonces $\phi\rightarrow\frac{pi}{2}$.
+
+De esta manera vemos que $U_1=0=A\left(\frac{pi}{2}-\phi\right)+B+\frac{2}{\sigma}$ implica que $A=0$ y $B=\frac{2}{\sigma}$.
+
+Entonces:
+
+\begin{align*}
+    \Phi = \frac{1}{\sigma}\sin\phi+\frac{GM}{2\sigma^2c^2}\left(3+4\sin\phi+\cos2\phi\right)+\cdots
+\end{align*}
+
+Ahora planteamos la integral:
+
+\begin{align*}
+    \delta t 
+    &= \frac{2}{c^3}\int \Phi(\sigma) c\dd \sigma\\
+    &= \frac{2}{c^2} ~\int_{t_o}^{t_f} \dd \sigma \left[\frac{1}{\sigma} \sin\phi+\frac{GM}{2\sigma^2c^2}\left(3+4\sin\phi+\cos2\phi\right)\right]\\
+    &= \frac{2}{c^2} ~\left[\sin\phi \eval*{\ln\sigma}_{\sigma = t_o}^{t_f}-\left(3+4\sin\phi+\cos2\phi\right)\eval*{\frac{GM}{2\sigma c^2}}_{\sigma = t_o}^{t_f}\right]
+\end{align*}
+
+
+Ahora, teniendo en cuenta que en los puntos en los que la señal está en la tierra y en venus podemos considerar $\phi$ igual a cero y $\pi$ respectivamente, y tomando en cuenta $\Phi$ en estos límites como su expresión $\Phi=\frac{1}{r}$ tendríamos:
+
+\begin{align*}
+    \Phi = \frac{1}{r} &= \frac{1}{\sigma} \sin\phi+\frac{GM}{2\sigma^2c^2}\left(3+4\sin\phi+\cos2\phi\right)\\
+    \frac{1}{r_T} &=\frac{GM}{2t_o^2c^2}\left(3+1\right)\\
+    \frac{1}{r_T} &=\frac{2GM}{t_o^2c^2}\\
+    t_o&=\left(\frac{2GMr_T}{c^2}\right)^{1/2}\\\\
+    &\text{Análogamente}\\
+    t_f&=\left(\frac{2GMr_V}{c^2}\right)^{1/2}
+    % \Phi = \frac{1}{r} &= \frac{1}{\sigma} \sin\phi+\frac{GM}{2\sigma^2c^2}\left(3+4\cos\phi+\cos^2\phi\right)\\
+    % \frac{1}{r_V} &=\frac{GM}{2t_o^2c^2}\left(3-4+1\right)\\
+    % \frac{1}{r_T} &=0\\
+    % t_o&=\left(\frac{4GMr_T}{c^2}\right)^{1/2}\\
+\end{align*}
+
+
+Y finalmente evaluamos la expresión de $\delta t$ en $t_f$, $\phi = \pi$ y $t_o$, $\phi = 0$.
+
+\begin{align*}
+    \delta t &= \frac{2}{c^2} ~\left[\sin\phi \ln\sigma-\left(3+4\sin\phi+\cos2\phi\right)\frac{GM}{2\sigma c^2}\right]\eval_{t_o,0}^{t_f,\pi}\\
+        &=\frac{2}{c^2}\left[\frac{3GM}{2t_oc^2}-\frac{3GM}{2t_fc^2}\right]\\
+        &=\frac{2}{c^2}\left[\frac{3(GM)^{1/2}}{2\sqrt{2}r_T^{1/2}c}-\frac{3(GM)^{1/2}}{2\sqrt{2}r_V^{1/2}c}\right]
+\end{align*}
+
+
+Entonces:
+
+\begin{align*}
+    % \delta t = \frac{3}{2c^3}(GM)^{1/2}\left[\frac{1}{r_T^{1/2}}-\frac{1}{r_V^{1/2}}\right]
+    \delta t = \frac{3}{c^3}\left(\frac{GM}{2}\right)^{1/2}\left[\frac{1}{r_T^{1/2}}-\frac{1}{r_V^{1/2}}\right]
+\end{align*}
+
+Con $M$ la masa del sol.

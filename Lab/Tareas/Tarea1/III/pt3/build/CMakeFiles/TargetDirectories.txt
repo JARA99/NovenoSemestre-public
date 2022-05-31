@@ -1,0 +1,3 @@
+/home/jorgealejandro/Documents/Tareas/2022/NovenoSemestre-public/Lab/Tareas/Tarea1/III/pt3/build/CMakeFiles/rebuild_cache.dir
+/home/jorgealejandro/Documents/Tareas/2022/NovenoSemestre-public/Lab/Tareas/Tarea1/III/pt3/build/CMakeFiles/edit_cache.dir
+/home/jorgealejandro/Documents/Tareas/2022/NovenoSemestre-public/Lab/Tareas/Tarea1/III/pt3/build/CMakeFiles/R3_Vector.dir
